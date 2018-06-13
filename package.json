@@ -1,0 +1,45 @@
+{
+  "name": "mlit-mm-slack-gas",
+  "version": "1.0.0",
+  "description": "A GAS to post the MLIT mail magazine in Slack",
+  "main": "dist/mm.gs.js",
+  "scripts": {
+    "test": "npm run build",
+    "lint": "standard --fix",
+    "watch": "onchange  --delay 1000 '*.json' 'src/*' -- npm run build",
+    "build": "npm run lint && babel src/ -d dist/ --presets=env",
+    "start": "npm run build && npm run watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ymkjp/mlit-mm-slack-gas.git"
+  },
+  "keywords": [
+    "google-apps-script",
+    "mlit",
+    "slack",
+    "gmail"
+  ],
+  "author": "@ymkjp",
+  "license": "MIT License",
+  "bugs": {
+    "url": "https://github.com/ymkjp/mlit-mm-slack-gas/issues"
+  },
+  "homepage": "https://github.com/ymkjp/mlit-mm-slack-gas#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "onchange": "^4.0.0",
+    "standard": "^11.0.1"
+  },
+  "standard": {
+    "globals": [
+      "ScriptApp",
+      "Logger",
+      "Utilities",
+      "UrlFetchApp",
+      "MailApp",
+      "GmailApp"
+    ]
+  }
+}
